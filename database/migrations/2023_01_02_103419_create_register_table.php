@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('tax');
-            $table->string('sellers_permit');
+            $table->string('sellers_permit')->default('P');
             $table->string('city');
             $table->string('company_name');
             $table->string('password');
