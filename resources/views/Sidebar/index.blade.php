@@ -18,6 +18,12 @@
                             <span>Register</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="nav-link" href="{{route('form.data')}}">
+                            <i class='bx bx-detail' aria-hidden="true"></i>
+                            <span>Form</span>
+                        </a>
+                    </li>
                   
                   
                  

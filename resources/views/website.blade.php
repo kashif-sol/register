@@ -42,6 +42,30 @@
 	<!-- Theme Custom CSS -->
 	<link rel="stylesheet" href="{{asset('ThemeData/css/custom.css')}}">
 
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+	<!-- Vendor CSS -->
+	<link rel="stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.css')}}" />
+	<link rel="stylesheet" href="{{asset('vendor/animate/animate.compat.css')}}">
+	<link rel="stylesheet" href="{{asset('vendor/font-awesome/css/all.min.css')}}" />
+	<link rel="stylesheet" href="{{asset('vendor/boxicons/css/boxicons.min.css')}}" />
+	<link rel="stylesheet" href="{{asset('vendor/magnific-popup/magnific-popup.css')}}" />
+	<link rel="stylesheet" href="{{asset('vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />
+	<link rel="stylesheet" href="{{asset('vendor/select2/css/select2.css')}}" />
+	<link rel="stylesheet" href="{{asset('vendor/select2-bootstrap-theme/select2-bootstrap.min.css')}}" />
+	<link rel="stylesheet" href="{{asset('vendor/pnotify/pnotify.custom.css')}}" />
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="{{asset('css/theme.css')}}" />
+
+	<!-- Skin CSS -->
+	<link rel="stylesheet" href="{{asset('css/skins/default.css')}}" />
+
+	<!-- Theme Custom CSS -->
+	<link rel="stylesheet" href="{{asset('css/custom.css')}}">
+
+	<!-- Head Libs -->
+	<script src="{{asset('vendor/modernizr/modernizr.js')}}"></script>
 	<!-- Head Libs -->
 	<script src="{{asset('ThemeData/vendor/modernizr/modernizr.js')}}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -87,6 +111,7 @@
 	</script>
 	@include('shopify-app::partials.token_handler')
 	@include('shopify-app::partials.flash_messages')
+	
 	@endif
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
