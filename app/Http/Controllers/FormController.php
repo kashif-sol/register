@@ -89,4 +89,9 @@ class FormController extends Controller
         $fields = Form::all();
         return response()->json($fields);
     }
+    public function getallcolumns(){
+       $array= Schema::getColumnListing('dynamic_table');
+    //    $array_rt = array_diff($array, ["id", "created_at","updated_at"]);
+       return $array;
+    }
 }
