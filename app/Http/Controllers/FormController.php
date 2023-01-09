@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DynamicTable;
 use App\Models\Form;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class FormController extends Controller
@@ -93,5 +95,10 @@ class FormController extends Controller
        $array= Schema::getColumnListing('dynamic_table');
     //    $array_rt = array_diff($array, ["id", "created_at","updated_at"]);
        return $array;
+    }
+    public function create_dynamic_table(Request $request){
+    //    $create= DB::tabele('')->create($request->all());
+    $create= DB::table('dynamic_table')->insert($request->all());
+       return $create;
     }
 }

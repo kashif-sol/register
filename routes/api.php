@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('register-form',[RegisterController::class,'create']);
 Route::get('form-input',[FormController::class,'getallfields']);
 Route::get('column-names',[FormController::class,'getallcolumns']);
+Route::post('dynamic_table',[FormController::class,'create_dynamic_table']);
