@@ -25,6 +25,9 @@ class FormController extends Controller
                 'field_name' => $request->field_name,
                 'field_placeholder' => $request->field_placeholder,
             ]);
+            $this->removeTable('dynamic_table');
+            $this->operate();
+            
             return response()->json($form);
         }
         if (!empty($request->textarea_label)) {
@@ -33,6 +36,8 @@ class FormController extends Controller
                 'field_lable' => $request->textarea_label,
                 'field_name' => $request->text_area
             ]);
+            $this->removeTable('dynamic_table');
+            $this->operate();
             return response()->json($form);
         }
         if (!empty($request->image_label)) {
@@ -41,6 +46,8 @@ class FormController extends Controller
                 'field_lable' => $request->image_label,
                 'field_name' => $request->image_tag
             ]);
+            $this->removeTable('dynamic_table');
+            $this->operate();
             return response()->json($form);
         }
     }
@@ -63,6 +70,7 @@ class FormController extends Controller
                         $table->string($field['field_name']);
                     }
                 }
+                
                 $table->timestamps();
             });
 
@@ -76,6 +84,7 @@ class FormController extends Controller
 
         $table_name = 'dynamic_table';
 
+
         $table_fields = Form::all();
         foreach ($table_fields as $field) {
             $postdata['field_name'] = $field->field_name;
@@ -83,7 +92,7 @@ class FormController extends Controller
 
             $fields[] =  $postdata;
         }
-        dd($fields);
+        // dd($fields);
         return $this->createTable($table_name, $fields);
     }
     public function getallfields()
@@ -101,4 +110,11 @@ class FormController extends Controller
     $create= DB::table('dynamic_table')->insert($request->all());
        return $create;
     }
+    public function removeTable($table_name)
+    {
+        Schema::dropIfExists($table_name); 
+        // dd('x');
+        return true;
+    }
+    
 }
